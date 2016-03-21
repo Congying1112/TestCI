@@ -2,7 +2,11 @@ language: cpp
 compiler:
   - gcc
   - clang
-script: make && make test
+before_script:
+  - mkdir debug
+  - cd debug
+  - cmake ..
+script: make
 notifications:
   email:
     recipients:
